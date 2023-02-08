@@ -1,0 +1,26 @@
+
+docker pull postgres
+
+docker run --name postgresbda -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
+
+psql -U postgres
+
+\l
+
+create DATABASE cricketplayers;
+
+create TABLE players(
+	name varchar(50),
+	DOB date,
+	country varchar(30),
+	attribute varchar(80)
+);
+
+
+INSERT INTO players VALUES ('Babar Azam', '1994-10-15', 'Pakistan', 'Batsman');
+INSERT INTO players VALUES ('Shaheen Afridi', '2000-4-6', 'Pakistan', 'Bowler');
+INSERT INTO players VALUES ('Virat Kohli', '1988-11-5', 'India', 'Batsman');
+
+
+
+	
